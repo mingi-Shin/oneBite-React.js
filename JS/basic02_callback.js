@@ -44,8 +44,8 @@ repeatUp(5, (num) => {
 
 //객체 안에 함수 가능
 const pserson ={
-  name: "신민기",
-  age: 34,
+  name: "마라탕",
+  age: 20,
   introduce: function() {
     console.log("안녕 나의 이름은 "+ this.name + "이고 "+ this.age + "살이야");
   },
