@@ -10,12 +10,21 @@ let person = {
   age: 34,
   job: "developer"
 }
+
 let {name, age, job: myJob, hobby} = person;
 console.log(name, age, myJob, hobby);
 
-// 객체 구조 분해 할당을 이용해서 함수의 매개변수로 받기
+// 객체 구조 분해 할당을 이용해서 함수의 매개변수로 받기 (프로퍼티 값 호출)
 const func = ({name, age, job, hobby}) => {
   console.log(name, age, job, hobby);
 }
 func(person);
+
+//연습
+let person2 = {
+  name: "장상휘",
+  age: 34,
+  job: "farmer"
+}
+func(person2);
 

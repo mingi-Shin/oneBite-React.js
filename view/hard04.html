@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../JS/hard04.js">
+
+  </script>
+  <style>
+    table ,th ,td {
+      border: 3px solid brown;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .container img {
+      width: 50%;
+      margin-right: 20px;
+    }
+    .container .description {
+      max-width: 600px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>원시타입&객체타입</h1>
+  <div>
+    <table>
+      <tr>
+        <th>원시타입</th>
+        <td>값 자체로써 변수에 저장되고 복사된다.</td>
+      </tr>
+      <tr>
+        <th>객체타입</th>
+        <td>참조값을 통해 변수에 저장되고 복사된다.</td>
+      </tr>
+    </table>
+  </div>
+  <div class="container">
+    <img src="../images/원시타입.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>p2를 p1과 같다고 하면 p2도 p1과 동일한 값 1을 새로 생성해서 가리킴.
+        <br>그러나 값을 2로 바꾸면 메모리의 1이 바뀌는게 아니라 또 새로 생성됨. 
+        <br>원본값은 바뀌지 않아 그래서 불변값이라고 함.
+        <br><strong>불변값이다 (메모리 수정 x)</strong>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <img src="../images/객체타입.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>객체는 참조값을 통해서 값을 가리킴
+        <br>o2 객체가 o1과 같다고 하면 o2는 o1과 같은 참조값을 가리킴. 즉, 같은 객체를 의미.
+        <br>이 때 o2의 값을 바꾸면 참조하던 주소가 가리키던 값이 바뀌므로 원본이 바뀌는 거임. 
+        <br><strong>가변값이다 (메모리 수정 O)</strong>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <img src="../images/얕vs깊.png" >
+    <img src="../images/얕vs깊2.png">
+  </div>
+  <div>
+    <p>이건 알고만 있자..</p>
+    <img src="../images/얕vs깊3.png" style="width: 50%;">
+  </div>
+
+</body>
+</html>
