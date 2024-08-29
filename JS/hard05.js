@@ -6,7 +6,7 @@ for(let item of arr){
 
 
 
-//객체 순환 
+//객체 순환 예제 
 const worrior = {
   str: 20,
   dex: 10,
