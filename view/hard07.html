@@ -7,9 +7,54 @@
   <script src="../JS/hard07.js">
 
   </script>
+  <style>
+    table ,th ,td {
+      border: 3px solid brown;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .container img {
+      width: 50%;
+      margin-right: 20px;
+    }
+    .container .description {
+      max-width: 600px;
+    }
+
+  </style>
 </head>
 <body>
   <h1>배열 메서드: 순회와 탐색</h1>
-
+  <h2>아래 메서드는 모두 첫번째 요소 하나만 반환</h2>
+  <table>
+    <tr>
+      <th>forEach()</th>
+      <td>각 요소를 조작</td>
+    </tr>
+    <tr>
+      <th>includes()</th>
+      <td>특정 요소가 있는지 참 거짓 반환</td>
+    </tr>
+    <tr>
+      <th>indexOf()</th>
+      <td>얕은 검색: 인덱스만 반환</td>
+    </tr>
+    <tr>
+      <th>findIndex()</th>
+      <td>깊은 검색(객체): 인덱스만 반환</td>
+    </tr>
+    <tr>
+      <th>find()</th>
+      <td>김은 검색(객체): 요소를 모두 반환</td>
+    </tr>
+  </table>
 </body>
 </html>

@@ -25,3 +25,15 @@ console.log(arr4);
 
 // push, pop 속도 > (un)shift 속도
 
+//5. slice: 배열의 특정 범위를 잘라서(복사) 반환
+let arr5 = [10, 20, 30, 40, 50, 60, 70];
+let slice = arr5.slice(2, 4);
+let slice2 = arr5.slice(-1 );
+console.log(slice);
+console.log(slice2);
+
+//6. concat: 서로 다른 배열 이어붙이기
+let arr6 = [1, 2, 3];
+let arr7 = ['a', 'b', 'c'];
+let concatArr = arr6.concat(arr7);
+console.log(concatArr);
