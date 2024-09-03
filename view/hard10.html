@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../JS/hard10.js">
+
+  </script>
+<style>
+  .container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  .container img {
+    width: 50%;
+    margin-right: 20px;
+  }
+  .container .description {
+    max-width: 500px;
+  }
+</style>
+</head>
+<body>
+  <h1>동기와 비동기</h1>
+  <h2>
+    동기적 처리: 하나씩 순서대로 처리한다<br>
+  </h2>
+  <div class="container">
+    <img src="../images/동기1.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>
+        JS또한 동기적으로 코드를 실행한다. 함수포함
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <img src="../images/동기2.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>
+        단점: 특정 작업이 오래걸리는 경우 프로그램 전체 성능이 악화됨
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <img src="../images/동기3.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>
+        자바나 C의 경우 멀티쓰레드 방식을 쓰면 단점을 보완할 수 있다.<br>
+        하지만 JS에는 쓰레드가 1개 밖에 없다. <br>
+        그래서 JS는 비동기 방식을 쓴다.
+      </p>
+    </div>
+  </div>
+  <hr>
+  <h2>
+    비동기적 처리: 순서대로 처리하지 않는다<br>
+  </h2>
+  <div class="container">
+    <img src="../images/비동기1.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>
+        함수 안에 함수(콜백)을 넣어서 작업을 끊지 않고 연이어 나갈 수 있음
+      </p>
+    </div>
+  </div>
+  <div class="container" style="align-items: center;" >
+    <img src="../images/비동기2.png" >
+    <img src="../images/비동기3.png" >
+    <div class="description">
+      <h2>설명</h2>
+      <p>
+        비동기 작업들은 자바스크립트의 쓰레드가 아니라, Web APIs라는 웹 브라우저가 직접 관리하는 별도의 영역에서 실행된다.<br>
+        자바스크립트 엔진은 비동기함수를 보면 WebAPIs에 넘기고, WebAPIs는 콜백함수를 자스엔진에게 넘긴다.<br>
+        그래서 JS는 쓰레드가 한개임에도 불구하고 동시에 여러 작업이 가능한 것
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
