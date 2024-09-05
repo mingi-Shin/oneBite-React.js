@@ -67,7 +67,7 @@ function registerUser(userData){
       }
       console.log("Registration process complete: ", result);
 
-      tier(savedUser.membership, (silver, gold ) => {
+      tier(savedUser.membership, (silver, gold ) => { //여기서는 sendEmail결과에 따른 함수가 와야 하지만 일단 패스.
         console.log("he/she's tier is: ", savedUser.membership? gold : silver);
       })
 
