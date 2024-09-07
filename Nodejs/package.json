@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  
   "type": "module",
   "주석": " 'type: module'의 의미 -> 이 NodeJS패키지는 ES모듈시스템을 사용하겠다는 뜻 (CommonJS 기능은 사용할 수 없게된다) ",
   
