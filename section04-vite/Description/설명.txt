@@ -1,0 +1,6 @@
+public 폴더: static datas folder
+.jsx: React코드가 작성된는 공간
+ESlint(ES + lint): 개발자들 사이에 코드를 통일성있게 도와주는(규약) 도구
+App.jsx: 최상위 컴포넌트
+App.jsx를 보면 App()함수가 HTML태그들을 return하고있다: App컴포넌트라고 부른다.
+main.jsx를 보면 render()함수를 쓰기 위해서는 createRoot함수로 객체를 만들어야 한다.
