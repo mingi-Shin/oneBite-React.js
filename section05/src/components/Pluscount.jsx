@@ -2,7 +2,7 @@ import { useState } from "react";
 
 //자식컴퍼넌트 
 const PlusCount = () => {
-  const [stateValue, setStateF] = useState(0); // 두개의 요소를 담은 배열 반환: 첫번째 요소는 새롭게 생성된 state값(0), 두번째 요소는 상태변화함수
+  const [stateValue, setStateF] = useState(0); // 두개의 요소를 담은 배열 반환: 첫번째 요소는 새롭게 생성된 state값(0), 두번째 요소는 상태변화함수(state값을 변경)
   console.log(stateValue);
 
   return (
