@@ -1,4 +1,4 @@
-import useCustomHook from "./../hooks/useInput"
+import useMyCustomHook from "./../hooks/useInput"
 
 
 // 3가지 훅 관련 팁
@@ -9,8 +9,8 @@ import useCustomHook from "./../hooks/useInput"
 // const state = useState(); 함수 컴포넌트 밖에서 호출 불가 
 const HookExam = () => {
 
-  const {input, setInput} = useCustomHook;
-  const {input2, setInput2} = useCustomHook;
+  const {input, setInput} = useMyCustomHook;
+  const {input2, setInput2} = useMyCustomHook;
 
   return (
     <div>

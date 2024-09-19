@@ -13,7 +13,7 @@ const Register = () => {
   });
   
   const inputRefs = {
-    name: useRef(null),
+    name: useRef(null), //렌더링 없이 상태변화 
     birth: useRef(null),
     country: useRef(null),
     bio: useRef(null)

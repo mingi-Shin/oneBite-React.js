@@ -4,7 +4,7 @@ import PlusCount from './components/Pluscount';'./components/Pluscount'
 import Register from './components/Register'
 import HookExam from './components/HookExam';
 
-// useState는 상태가 변경될 때, 컴포넌트가 자동으로 다시 렌더링되로록 해줌.(React가 알아서 DOM을 다시 그려준다.)
+// useState는 상태가 변경될 때, 컴포넌트가 자동으로 리렌더링되로록 해줌.(React가 알아서 DOM을 다시 그려준다.)
 // 반면 JS는 DOM을 수동으로 업데이트 해줘야하기에, 상태변경 후 DOM을 조작하는 추가 코드가 필요하다.(예, --.textContent = count )
 
 function App(){
