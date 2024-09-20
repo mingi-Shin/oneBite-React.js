@@ -1,4 +1,5 @@
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef } from "react";
+
 
 //Ver.2.0: 객체로 묶어 속성 뽑아쓰기 (가독성Goat)
 const Register = () => {
@@ -11,7 +12,12 @@ const Register = () => {
     bio: ""
   });
   
-  const inputRef = useRef();
+  const inputRefs = {
+    name: useRef(null), //렌더링 없이 상태변화 
+    birth: useRef(null),
+    country: useRef(null),
+    bio: useRef(null)
+  }
 
   /**
     e.target은 이벤트가 발생한 HTML 요소
@@ -27,15 +33,18 @@ const Register = () => {
   
   const onSubmit = () => {
     alert("제출합니다.");
-    if(value.name === ""){
-      //이름을 입력하는 DOM 요소에 포커스 하기
-      console.log("해당 DOM 요소: ", inputRef.current);
-      inputRef.current.focus();
+    let error =[];
+    for (let key in value){ //key값 뽑아
+      let val = value[key]; //값 초기화 
+      if(val === null || val === '' || val === '선택'){ //값이 null이면 
+        console.log('값이 없는 키: ' + key);
+        error.push(key);
+        inputRefs[key].current.focus(); //focus()는 한번에 하나의 요소에만 가능.. 다른 방법 찾기 
+      };
     }
+    console.log(error);
+    alert('모든 값을 입력해 주세요 \n : ' + error);
   }
-
-
-
 
   return (
     <>
@@ -43,13 +52,13 @@ const Register = () => {
         <h1>Register 페이지</h1>
       </div>
       <div>
-        <input ref={inputRef} name="name" onChange={onChange} value={value.name} placeholder={value.name} /> 값: {value.name}
+        <input ref={inputRefs.name} name="name" onChange={onChange} value={value.name} placeholder={value.name} /> 값: {value.name}
       </div>
       <div>
-        <input name="birth" onChange={onChange} value={value.birth} type="date" />값: {value.birth}
+        <input ref={inputRefs.birth}  name="birth" onChange={onChange} value={value.birth} type="date" />값: {value.birth}
       </div>
       <div>
-        <select name="country" onChange={onChange} value={value.country}>
+        <select ref={inputRefs.country} name="country" onChange={onChange} value={value.country}>
           <option disabled>선택</option>
           <option value="KOR">한국</option>
           <option value="US">미국</option>
@@ -58,7 +67,7 @@ const Register = () => {
         값: {value.country}  --&gt;  option태그의 value값이 넘어감
       </div>
       <div>
-        <textarea name="bio" onChange={onChange} value={value.bio} style={{whiteSpace:"pre-wrap"}} placeholder="내용" rows={7}></textarea>
+        <textarea ref={inputRefs.bio} name="bio" onChange={onChange} value={value.bio} style={{whiteSpace:"pre-wrap"}} placeholder="내용" rows={7}></textarea>
         값: {value.bio}
       </div>
 
@@ -72,7 +81,7 @@ export default Register;
 /**
   onChange함수로 입력값을 매개변수로 받아서 useState의 value 로 저장 -> input태그의 value={??}에 따라 고정 
 
-  ref={inputRef} 코드에 따라, 해당 코드가 쓰여진 태그(input)의 DOM이 inputRef변수에 저장된다
-  예로, 위에서 name태그의 DOM은 inputRef변수로 호출 가능
+  임의의 태그 안에 속성 ref={inputRef} 코드에 따라, 해당 코드가 쓰여진 태그(,input)의 DOM이 inputRef변수에 저장된다
+  예로, 위에서 name태그의 DOM, <input name={name}>을 inputRef변수로 호출 가능
 
  */

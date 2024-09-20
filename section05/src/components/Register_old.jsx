@@ -31,7 +31,7 @@ const Register = () => {
         <input onChange={onChangeName} value={name} placeholder={name} /> 값: {name}
       </div>
       <div>
-        <input onChange={onChangeBirth} value={birth} type="date" />값: {birth}
+        <input onChange={onChangeBirth} value={birth} type="date" /> 값: {birth}
       </div>
       <div>
         <select onChange={onChangeCountry} value={country}>
