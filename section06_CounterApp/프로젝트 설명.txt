@@ -1,0 +1,16 @@
+고민 1.
+counter 숫자는 state이다.
+이 state를 어느 컴포넌트에 넣어야 할까?
+  -컨트롤러, 뷰어, 앱
+
+정답은 앱 컴퍼넌트...왜?
+  -컴포넌트 간에 데이터 전달은 props로 전달하는데, 이 props는 부모에서 자식에게만 전달이 가능함 
+    근데 Controller와 Viewer는 관계없는 컴포넌트임. 따라서 props 전달 불가능 
+    즉, Viewer에서 useState를 만들어서 {value}를 표기해도, {setVlaue}함수를 Controller에 전달할 방법이 없음...
+    마찬가지로 Controller컴포넌트에 useState를 만들어 {setValue}를 설정할 순 있어도 {value}를 표기할 방법이 없음
+
+
+그래서 해결법은?
+  <App.jsx>에서 [value, setValue]를 선언하고,
+  <Viewer>에는 value state를, <Controller>에는 setValue를 별도의 이벤트핸들러 함수로 만들어서 props로 전달 
+
